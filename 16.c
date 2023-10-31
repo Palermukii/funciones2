@@ -1,21 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Escribir una función recursiva en C int power(int a, int n) que devuelva 𝑎 𝑛
+int power(int a, int n) {
+    if( n == 0) return 1;
 
-int power (int n , int a){
-    return a ^ n;
-
+    else {
+        return (a * power(a, n-1));
+    }
 }
 
-int main (int argc , char *argv[]) {
+int main(int argc, char *argv[]) {
+    int a = atoi(argv[1]);
+    int n = atoi(argv[2]);
 
-    int n = atoi (argv[1]);
-    int a = atoi (argv[2]);
+    int resultado = power(a, n);
 
-    int result = power(n , a); 
-
-     printf("el numero %d elevado a %d da como resultado %d\n" , n , a , result);
-
-    return 0;
+    printf("La potencia de %d a la %d es %d", a, n , resultado);
 }

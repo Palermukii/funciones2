@@ -1,21 +1,17 @@
 #include <stdio.h>
-
 #include <stdlib.h>
 
-int factorial(int numero) {
-    if(numero == 1 || numero == 0 ) return 1;
+int factorial(int n) {
+    if(n == 0 || n == 1) {
+        return 1;
+    }
     else {
-        return (numero * factorial(numero - 1));
+        return (n * factorial(n - 1));
     }
 }
+
 int main(int argc, char *argv[]) {
-    int numero = atoi(argv[1]);
-    int resultado = factorial(numero);
-
-    printf("%d es el factorial de %d", resultado, numero);
-
-    // for(int i = 0; i < numero, i++) {
-    //     printf("%d", Factorial(i));
-    // }
-
+    int a = atoi(argv[1]);
+    int resultado = factorial(a);
+    printf("%d", resultado);
 }
